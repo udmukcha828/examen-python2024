@@ -87,6 +87,20 @@ def create_orbit_image(space, orbit):
     orbit.image = space.create_oval([x - r, y - r], [x + r, y + r],outline=orbit.color)
 
 
+def create_none_orbit_image(space, orbit):
+    """Создаёт отображаемый объект орбиты.
+
+    Параметры:
+
+    **space** — холст для рисования.
+    **orbit** — объект звезды.
+    """
+    x = scale_x(orbit.x)
+    y = scale_y(orbit.y)
+    r = orbit.R
+    orbit.image = space.create_oval([x - r, y - r], [x + r, y + r],outline=orbit.colr)
+
+
 def create_planet_image(space, planet):
     """Создаёт отображаемый объект планеты.
 

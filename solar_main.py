@@ -34,6 +34,7 @@ def execution():
     """
     global physical_time
     global displayed_time
+    #calculate_force(space_objects, time_step.get())
     for body in space_objects:
         update_object_position(space, body)
     physical_time += time_step.get()
@@ -43,6 +44,27 @@ def execution():
         space.after(101 - int(time_speed.get()), execution)
 
 
+def show_orbits():
+    for body in space_objects:
+        if body.type == 'orbit':
+            create_orbit_image(space, body)
+
+def hide_orbits():
+    for body in space_objects:
+        if body.type == 'orbit':
+            create_noneorbit_image(space, body)
+
+# Флаг для отслеживания состояния отображения орбит
+show_orbits_flag = False
+
+def toggle_orbits():
+    global show_orbits_flag
+    if show_orbits_flag:
+        hide_orbits()
+        show_orbits_flag = True
+    else:
+        show_orbits()
+        show_orbits_flag = False
 def start_execution():
     """Обработчик события нажатия на кнопку Start.
     Запускает циклическое исполнение функции execution.
@@ -83,7 +105,7 @@ def open_file_dialog():
     calculate_scale_factor(max_distance)
     for obj in space_objects:
         if obj.type == 'orbit':
-            create_orbit_image(space, obj)
+            create_noneorbit_image(space, obj)
         elif obj.type == 'star':
             create_star_image(space, obj)
         elif obj.type == 'planet':
@@ -114,8 +136,9 @@ def main():
 
     print('Modelling started!')
     physical_time = 0
-
     root = tkinter.Tk()
+        #create_noneorbit_image(space, orbit)
+        #create_orbit_image(space, orbit)
     # космическое пространство отображается на холсте типа Canvas
     space = tkinter.Canvas(root, width=window_width, height=window_height, bg="black")
     space.pack(side=tkinter.TOP)
@@ -125,7 +148,8 @@ def main():
 
     start_button = tkinter.Button(frame, text="Start", command=start_execution, width=6)
     start_button.pack(side=tkinter.LEFT)
-
+    orbit_button = tkinter.Button(frame, text="Show", command=toggle_orbits, width=5)
+    orbit_button.pack(side=tkinter.LEFT)
     time_step = tkinter.DoubleVar()
     time_step.set(1)
     time_step_entry = tkinter.Entry(frame, textvariable=time_step)
@@ -144,7 +168,6 @@ def main():
     displayed_time.set(str(physical_time) + " seconds gone")
     time_label = tkinter.Label(frame, textvariable=displayed_time, width=30)
     time_label.pack(side=tkinter.RIGHT)
-
     root.mainloop()
     print('Modelling finished!')
 

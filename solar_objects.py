@@ -103,6 +103,8 @@ class Orbit:
         color = "white"
         """Цвет орбитыы"""
 
+        colr = "black"
+
         image = None
         """Изображение орбиты"""
 

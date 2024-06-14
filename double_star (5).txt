@@ -1,0 +1,43 @@
+# Двойная звезда
+Star 30 white 10 1E10 0 0 0 0
+Star 30 cyan 10 -1E10 0 0 0 0
+Planet 3 orange 5 -1.4E10 0 0 0 0
+Planet 3 green 5 -1.5E10 0 30E2 50E2 0
+Planet 3 red 5 -1.6E10 0 0 30E5 0
+Planet 3 grey 5 -1.7E10 0 0 50E5 0 
+Planet 3 orange 5 -1.8E10 0 0 30E5 0
+Planet 3 green 5 -1.9E10 0 0 50E5 0
+Planet 3 red 5 -2E10 0 0 30E5 0
+Planet 3 grey 5 -2.1E10 0 0 50E5 0
+Planet 3 orange 5 -2.2E10 0 0 30E5 0
+Planet 3 green 5 -2.3E10 0 0 50E5 0
+Planet 3 red 5 -2.4E10 0 0 30E5 0
+Planet 3 orange 5 1.4E10 0 20E4 30E4 0
+Planet 3 orange 5 0.6E10 0 20E4 30E4 180
+Planet 3 red 5 1.5E10 0 20E4 30E4 0
+Planet 3 red 5 0.5E10 0 20E4 30E4 180
+Planet 3 green 5 1.7E10 0 20E4 30E4 0
+Planet 3 green 5 0.3E10 0 20E4 30E4 180
+Planet 3 grey 5 1.9E10 0 20E4 30E4 0
+Planet 3 grey 5 0.1E10 0 20E4 30E4 180
+Planet 3 purple 5 2.1E10 0 20E4 30E4 0
+Planet 3 purple 5 -0.1E10 0 20E4 30E4 180
+Planet 3 blue 5 2.3E10 0 20E4 30E4 0
+Planet 3 blue 5 -0.3E10 0 20E4 30E4 180
+Orbit 40 white black 1E10 0 
+Orbit 50 white black 1E10 0 
+Orbit 70 white  black 1E10 0 
+Orbit 90 white  black 1E10 0 
+Orbit 110 white  black 1E10 0 
+Orbit 130 white  black 1E10 0 
+Orbit 40 white  black -1E10 0 
+Orbit 50 white  black -1E10 0 
+Orbit 60 white  black -1E10 0 
+Orbit 70 white  black -1E10 0 
+Orbit 80 white  black -1E10 0 
+Orbit 90 white  black -1E10 0 
+Orbit 100 white  black -1E10 0 
+Orbit 110 white  black -1E10 0 
+Orbit 120 white  black -1E10 0 
+Orbit 130 white  black -1E10 0 
+Orbit 140 white  black -1E10 0 

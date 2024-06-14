@@ -50,8 +50,8 @@ def parse_star_parameters(line, star):
     """
 
     star.type = "star"
-    r, color, m, x, y, vx, vy= line.split()[1:]
-
+    r, color, m, x, y, vx, vy, theta= line.split()[1:]
+    star.theta=int(theta)
     star.R = int(r)
     star.color = color
     star.m = float(m)
@@ -59,7 +59,7 @@ def parse_star_parameters(line, star):
     star.y = float(y)
     star.Vx = float(vx)
     star.Vy = float(vy)
-
+    star.theta = float(theta)
 
 def parse_planet_parameters(line, planet):
     """Считывает данные о планете из строки.
@@ -74,8 +74,8 @@ def parse_planet_parameters(line, planet):
     **planet** — объект планеты.
     """
     planet.type = "star"
-    r, color, m, x, y, vx, vy= line.split()[1:]
-
+    r, color, m, x, y, vx, vy,theta= line.split()[1:]
+    planet.theta=int(theta)
     planet.R = int(r)
     planet.color = color
     planet.m = float(m)
@@ -83,14 +83,15 @@ def parse_planet_parameters(line, planet):
     planet.y = float(y)
     planet.Vx = float(vx)
     planet.Vy = float(vy)
-
+    planet.theta = float(theta)
 
 
 def parse_orbit_parameters(line, orbit):
     orbit.type = "orbit"
-    r, color, x, y= line.split()[1:]
+    r, color,colr, x, y= line.split()[1:]
     orbit.R = int(r)
     orbit.color = color
+    orbit.colr = color
     orbit.x = float(x)
     orbit.y = float(y)
 
@@ -118,7 +119,7 @@ def write_space_objects_data_to_file(output_filename, space_objects):
                 s += str(obj.y) + ' ' + str(obj.Vx) + ' ' + str(obj.Vy) + '\n' + '\n'
                 out_file.write(s)
             if obj.type == 'orbit':
-                s += str(obj.R) + ' ' + str(obj.color) + ' ' + str(obj.x) + ' '
+                s += str(obj.R) + ' ' + str(obj.color) + ' ' + str(obj.colr) + ' ' + str(obj.x) + ' '
                 s += str(obj.y) + '\n' + '\n'
                 out_file.write(s)
 
